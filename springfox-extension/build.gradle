@@ -1,32 +1,40 @@
 plugins {
     id 'java'
-    id 'java-library'
     id 'maven-publish'
 }
 
-version = 'v1.0.14'
-
 group = 'com.github.TaegyunWoo'
+version = 'v1.0.15'
+
+sourceCompatibility = 11 // java 11
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
-
+    implementation 'com.google.guava:guava:29.0-jre'
     implementation "org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE"
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                groupId = 'com.github.TaegyunWoo'
-                artifactId = 'springfox-extension'
-                version = 'v1.0.14'
-            }
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
         }
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "7.3.3"
+    distributionType = Wrapper.DistributionType.ALL
 }
