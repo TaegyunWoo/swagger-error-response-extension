@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=springfox.error.response.extension.configuration.ErrorResponseExtensionConfig

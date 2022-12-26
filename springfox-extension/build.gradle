@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.TaegyunWoo'
-version = 'v1.0.25'
+version = 'v1.0.26'
 
 sourceCompatibility = 11 // java 11
 targetCompatibility = 11
@@ -37,7 +37,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.github.TaegyunWoo'
             artifactId = 'springfox-extension'
-            version = "v1.0.25"
+            version = "v1.0.26"
             from components.java
             artifact sourcesJar
             artifact javadocJar
