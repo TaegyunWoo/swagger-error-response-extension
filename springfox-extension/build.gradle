@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-version = '1.0.0'
+version = 'v1.0.13'
 
 group = 'com.github.TaegyunWoo'
 
@@ -24,7 +24,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.TaegyunWoo'
                 artifactId = 'springfox-extension'
-                version = '1.0'
+                version = 'v1.0.13'
             }
         }
     }
