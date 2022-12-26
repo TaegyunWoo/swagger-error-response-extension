@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.TaegyunWoo'
-version = 'v1.0.20'
+version = 'v1.0.21'
 
 sourceCompatibility = 11 // java 11
 targetCompatibility = 11
@@ -22,27 +22,12 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 }
 
-//afterEvaluate {
-//    java {
-//        withSourcesJar()
-//        withJavadocJar()
-//    }
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                groupId = 'com.github.TaegyunWoo'
-//                artifactId = 'springfox-extension'
-//                version = 'v1.0.19'
-//            }
-//        }
-//    }
-//}
 publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.github.TaegyunWoo'
             artifactId = 'springfox-extension'
-            version = "v1.0.20"
+            version = "v1.0.21"
             from components.java
         }
     }
