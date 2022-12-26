@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.github.TaegyunWoo'
-version = 'v1.0.17'
+version = 'v1.0.18'
 
 sourceCompatibility = 11 // java 11
 targetCompatibility = 11
@@ -31,7 +31,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.TaegyunWoo'
                 artifactId = 'springfox-extension'
-                version = 'v1.0.17'
+                version = 'v1.0.18'
             }
         }
     }
