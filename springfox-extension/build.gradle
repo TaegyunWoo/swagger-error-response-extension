@@ -3,7 +3,9 @@ plugins {
     id 'maven-publish'
 }
 
-version = 'v1.0.9'
+version = 'v1.0.11'
+
+group = 'com.github.TaegyunWoo'
 
 repositories {
     mavenCentral()
