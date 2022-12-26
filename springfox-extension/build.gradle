@@ -1,9 +1,10 @@
 plugins {
     id 'java-library'
-    id 'maven-publish'
 }
 
-version = 'v1.0.11'
+apply plugin: 'maven-publish'
+
+version = 'v1.0.12'
 
 group = 'com.github.TaegyunWoo'
 
