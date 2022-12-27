@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.TaegyunWoo'
-version = 'v1.1.1'
+version = 'v1.1.2'
 
 sourceCompatibility = 11 // java 11
 targetCompatibility = 11
@@ -37,7 +37,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.github.TaegyunWoo'
             artifactId = 'springfox-extension'
-            version = "v1.1.1"
+            version = "v1.1.2"
             from components.java
             artifact sourcesJar
             artifact javadocJar
@@ -48,4 +48,8 @@ publishing {
 task wrapper(type: Wrapper) {
     gradleVersion = "7.3.3"
     distributionType = Wrapper.DistributionType.ALL
+}
+
+test {
+    useJUnitPlatform()
 }
