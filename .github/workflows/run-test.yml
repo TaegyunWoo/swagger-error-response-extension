@@ -28,4 +28,4 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./build/test-results/test/TEST-springfox.error.response.extension.TempTest.xml
+          file: ./build/reports/jacoco/test/jacocoTestReport.xml

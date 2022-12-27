@@ -51,17 +51,24 @@ task wrapper(type: Wrapper) {
     distributionType = Wrapper.DistributionType.ALL
 }
 
-test {
-    useJUnitPlatform()
-}
-
 jacoco {
     // JaCoCo 버전
     toolVersion = '0.8.5'
 }
 
+test {
+    jacoco {
+        destinationFile = file("$buildDir/jacoco/jacoco.exec")
+    }
+
+    useJUnitPlatform()
+
+    finalizedBy 'jacocoTestReport'
+}
+
 jacocoTestReport {
     reports {
-        xml.required = true
+        xml.enabled true
+        html.enabled true
     }
 }
