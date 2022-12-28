@@ -16,7 +16,7 @@
 - [어떻게 사용하나요? - SpringFox](#어떻게-사용하나요---springfox)
 - [커스터마이징 - SpringFox](#커스터마이징---springfox)
 - [어떻게 사용하나요? - SpringDoc](#어떻게-사용하나요---springdoc)
-- [커스터마이징 - SpringDoc](#커스터마이징---springdox)
+- [커스터마이징 - SpringDoc](#커스터마이징---springdoc)
 - [앞으로의 계획](#앞으로의-계획)
 - [Version Check](#version-check)
 
