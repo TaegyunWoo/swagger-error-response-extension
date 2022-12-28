@@ -12,6 +12,7 @@
 
 ## Index
 
+<br/>
 
 ## Swagger Error Response Extension 가 무엇인가요?
 Swagger Error Response Extension 은 개발자가 직접 정의한 오류코드 정보를 간편하게 Swagger Response Description 에 추가해주는 간단한 오픈소스 라이브러리입니다.
@@ -23,6 +24,8 @@ Swagger Error Response Extension 은 개발자가 직접 정의한 오류코드 
 Spring 진영에서 Swagger를 사용하기 위해 사용하는 `SpringFox`나 `SpringDoc` 라이브러리 위에서 동작합니다.
 
 > 현재는 `SpringFox` 만 지원하는 중입니다.
+
+<br/>
 
 ## 왜 필요한가요?
 ### 먼저 개발자는 왜 직접 정의한 오류코드를 사용할까요?
@@ -47,10 +50,14 @@ Spring 진영에서 Swagger를 사용하기 위해 사용하는 `SpringFox`나 `
 
 그럼 Client 개발자가 각 오류코드를 보고, 그 코드에 맞춰 사용자에게 어떤 알림을 띄울지 결정할 수 있습니다.
 
+<br/>
+
 ### 그럼 어떻게 이 오류코드를 Client 개발자에게 간단명료하게 알려줄 수 있을까요?
 이 오류코드들을 외부 Document에 정리하고 개발자들끼리 공유하는 것도 하나의 방법일 수 있습니다.
 
 하지만 Swagger 를 통해 API Documentation을 하고 있을 때, 관련 API 문서 설명에 이 오류코드들을 정리해둔다면 좀 더 편하지 않을까요?
+
+<br/>
 
 ### 좋습니다. 그러면 Swagger 에 이 오류코드들을 직접 추가해봅시다!
 만약 `SpringFox` 를 통해 Swagger를 사용할 때, 직접 오류코드에 대한 설명을 아래와 같이 추가하면 됩니다.
@@ -71,6 +78,8 @@ String login(@RequestBody RequestDto requestDto) {
 
 직접 일일이 설명을 추가하거나 수정하면 됩니다! 하지만 어떤 실수도 없이 수정할 자신이 있나요?
 
+<br/>
+
 ### 그래서 Swagger Error Response Extension 가 탄생했습니다.
 이런 불편함을 개선하기 위해, Swagger Error Response Extension은 **Enum을 통해 오류코드를 관리**합니다.
 
@@ -79,6 +88,8 @@ Enum 클래스에 오류코드와 설명을 정의해두고 그것을 컨트롤�
 또한 **오류 코드를 관리하는 point를 enum 클래스 한 곳**으로 모을 수 있습니다. 즉, enum 클래스만 관리해도 오류코드에 대한 설명를 제어할 수 있습니다.
 
 마지막으로 오류 코드를 enum 클래스로 관리하므로, **실제 로직에서 enum 클래스를 사용할 수 있으며, 이것을 그대로 Swagger 까지 가져와 사용**할 수 있습니다. 
+
+<br/>
 
 ## 어떻게 사용하나요? - SpringFox
 ### Gradle Dependencies
@@ -95,6 +106,8 @@ dependencies {
     implementation 'com.github.TaegyunWoo:swagger-error-response-extension:v1.1.2' //Add Swagger Error Response Extension Library
 }
 ```
+
+<br/>
 
 ### Swagger Configuration
 SpringFox를 사용하기 위한 기본 설정을 진행합니다.
@@ -116,6 +129,8 @@ public class SwaggerConfig {
 
 }
 ```
+
+<br/>
 
 ### Error Enum
 이제 본격적으로 Swagger Error Response Extension 를 사용해봅시다.
@@ -161,6 +176,8 @@ public enum LoginErrorCode implements ErrorEnumInfo {
   - `code` Field -> HttpStatus Code
   - `description` Field -> description of error code
 
+<br/>
+
 ### Controller
 위에서 정의한 enum을 컨트롤러(Swagger API)에 적용하면 됩니다.
 
@@ -188,6 +205,8 @@ public class Controller {
 이제 아래와 같은 결과를 확인할 수 있습니다.
 
 ![error-example.jpg](./doc/img/error-example.jpg)
+
+<br/>
 
 ## 커스터마이징 - SpringFox
 만약 다른 형태로 swagger response description을 구성하고 싶다면, `ErrorResponseDescriptionBuilder` 인터페이스를 구현하면 됩니다.
@@ -222,14 +241,22 @@ public class CustomErrorResponseDescBuilder implements ErrorResponseDescriptionB
 
 동작원리에 대한 자세한 내용은 [SimpErrorResponseDescBuilder.java](./springfox-extension/src/main/java/springfox/error/response/extension/service/SimpErrorResponseDescBuilder.java) 를 참고하세요.
 
+<br/>
+
 ## 어떻게 사용하나요? - SpringDoc
 > 추가 예정입니다.
+
+<br/>
 
 ## 커스터마이징 - SpringDoc
 > 추가 예정입니다.
 
+<br/>
+
 ## 앞으로의 계획
 - 현재 SpringFox 한정으로 동작합니다. SpringDoc까지 지원하도록 업데이트할 예정입니다. 
+
+<br/>
 
 ## Version Check
 
