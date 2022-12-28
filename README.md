@@ -74,7 +74,11 @@ String login(@RequestBody RequestDto requestDto) {
 ### 그래서 Swagger Error Response Extension 가 탄생했습니다.
 이런 불편함을 개선하기 위해, Swagger Error Response Extension은 **Enum을 통해 오류코드를 관리**합니다.
 
-Enum 클래스에 오류코드와 설명을 정의해두고 그것을 컨트롤러에서 import 하면, 관련 정보들이 Swagger Response API의 description에 추가됩니다.
+Enum 클래스에 오류코드와 설명을 정의해두고 그것을 컨트롤러에서 import 하면, **관련 정보들이 자동으로 Swagger Response API의 description에 추가**됩니다.
+
+또한 **오류 코드를 관리하는 point를 enum 클래스 한 곳**으로 모을 수 있습니다. 즉, enum 클래스만 관리해도 오류코드에 대한 설명를 제어할 수 있습니다.
+
+마지막으로 오류 코드를 enum 클래스로 관리하므로, **실제 로직에서 enum 클래스를 사용할 수 있으며, 이것을 그대로 Swagger 까지 가져와 사용**할 수 있습니다. 
 
 ## 어떻게 사용하나요? - SpringFox
 ### Gradle Dependencies
