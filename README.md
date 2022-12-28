@@ -3,6 +3,9 @@
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|
 |[![](https://jitpack.io/v/TaegyunWoo/swagger-error-response-extension.svg)](https://jitpack.io/#TaegyunWoo/swagger-error-response-extension)| [![](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension/svg)](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension)         |[![codecov](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension/branch/master/graph/badge.svg?token=UO3BUVA6PS)](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension)| [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) |
 
+|Spring Boot| Compatible | SpringFox | Compatible |SpringDoc|Compatible|
+|-----------|------------|-----------|------------|----------|---|
+|2.7.7| ✅  | 3.0.0     | ✅  |✖️|✖️|
 
 | Demo Project                                                                                                                                                                                                                                                                   | English README.md |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
@@ -18,7 +21,6 @@
 - [어떻게 사용하나요? - SpringDoc](#어떻게-사용하나요---springdoc)
 - [커스터마이징 - SpringDoc](#커스터마이징---springdoc)
 - [앞으로의 계획](#앞으로의-계획)
-- [Version Check](#version-check)
 
 <br/>
 
@@ -263,11 +265,3 @@ public class CustomErrorResponseDescBuilder implements ErrorResponseDescriptionB
 
 ## 앞으로의 계획
 - 현재 SpringFox 한정으로 동작합니다. SpringDoc까지 지원하도록 업데이트할 예정입니다. 
-
-<br/>
-
-## Version Check
-
-|Spring Boot| Compatible | SpringFox | Compatible |SpringDoc|Compatible|
-|-----------|------------|-----------|------------|----------|---|
-|2.7.7| ✅  | 3.0.0     | ✅  |✖️|✖️|
