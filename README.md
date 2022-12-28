@@ -4,13 +4,9 @@
 |[![](https://jitpack.io/v/TaegyunWoo/swagger-error-response-extension.svg)](https://jitpack.io/#TaegyunWoo/swagger-error-response-extension)| [![](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension/svg)](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension)         |[![codecov](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension/branch/master/graph/badge.svg?token=UO3BUVA6PS)](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension)| [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) |
 
 
-| Demo Project                                                                                                                                                                                                                                                                   |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![TaegyunWoo/swagger-error-response-extension-demo - GitHub](https://github-readme-stats.vercel.app/api/pin/?username=TaegyunWoo&repo=swagger-error-response-extension-demo&theme=vision-friendly-dark)](https://github.com/TaegyunWoo/swagger-error-response-extension-demo) |
-
-| English README.md |
-|-------------------|
-| none              |
+| Demo Project                                                                                                                                                                                                                                                                   | English README.md |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| [![TaegyunWoo/swagger-error-response-extension-demo - GitHub](https://github-readme-stats.vercel.app/api/pin/?username=TaegyunWoo&repo=swagger-error-response-extension-demo&theme=vision-friendly-dark)](https://github.com/TaegyunWoo/swagger-error-response-extension-demo) | none              |
 
 <br/>
 
