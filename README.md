@@ -1,7 +1,7 @@
 # Swagger Error Response Extension
-|Latest Version| Build                                                                                                                                         | Coverage | License | Contribution                                                                                                                                   |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|
-|[![](https://jitpack.io/v/TaegyunWoo/swagger-error-response-extension.svg)](https://jitpack.io/#TaegyunWoo/swagger-error-response-extension)| [![](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension/svg)](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension)         |[![codecov](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension/branch/master/graph/badge.svg?token=UO3BUVA6PS)](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension)| [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) |
+|Latest Version| Build                                                                                                                                         | Coverage | License | Contribution                                                                                                                                   | License Scan |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+|[![](https://jitpack.io/v/TaegyunWoo/swagger-error-response-extension.svg)](https://jitpack.io/#TaegyunWoo/swagger-error-response-extension)| [![](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension/svg)](https://jitci.com/gh/TaegyunWoo/swagger-error-response-extension)         |[![codecov](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension/branch/master/graph/badge.svg?token=UO3BUVA6PS)](https://codecov.io/github/TaegyunWoo/swagger-error-response-extension)| [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) | [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) |[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FTaegyunWoo%2Fswagger-error-response-extension.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FTaegyunWoo%2Fswagger-error-response-extension?ref=badge_shield)|
 
 |Spring Boot| Compatible | SpringFox | Compatible |SpringDoc|Compatible|
 |-----------|------------|-----------|------------|----------|---|
@@ -265,3 +265,8 @@ public class CustomErrorResponseDescBuilder implements ErrorResponseDescriptionB
 
 ## 앞으로의 계획
 - 현재 SpringFox 한정으로 동작합니다. SpringDoc까지 지원하도록 업데이트할 예정입니다. 
+
+<br/>
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FTaegyunWoo%2Fswagger-error-response-extension.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FTaegyunWoo%2Fswagger-error-response-extension?ref=badge_large)
