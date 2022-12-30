@@ -21,6 +21,7 @@ dependencies {
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    testImplementation 'org.mockito:mockito-all:1.10.19'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
