@@ -231,7 +231,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component //add bean
-@Primary //apply is component instead of library component
+@Primary //apply this component instead of library component
 public class CustomErrorResponseDescBuilder implements ErrorResponseDescriptionBuilder {
 
   @Override
