@@ -24,6 +24,11 @@ public class SimpErrorResponseDescBuilder implements ErrorResponseDescriptionBui
     this.errorEnumParser = errorEnumParser;
   }
 
+  /**
+   * Build description that will be included in the 'Swagger Response'
+   * @param errorResponseAnno Annotation Class that has error data
+   * @return Map Object that has descriptions per each Http Status Code (< HTTP_Status_Code, Description >)
+   */
   @Override
   public Map<String, String> buildDescription(ErrorResponse errorResponseAnno) {
     // Map to store description per http status code
@@ -31,20 +36,8 @@ public class SimpErrorResponseDescBuilder implements ErrorResponseDescriptionBui
 
     // Repeat for each element (Error Enum) stored in ErrorResponse.value
     for (Class errorEnumClass : errorResponseAnno.errorEnums()) {
-      // check that the developer implements error enum class properly
-      try {
-        errorEnumParser.supports(errorEnumClass);
-      } catch (CannotParseEnumException e) {
-        throw new RuntimeException(e);
-      }
-
-      // extract enum constants and fields value by getter
-      Map<ErrorEnumInfo, Map<String, String>> constantInfoMap = null;
-      try {
-        constantInfoMap = errorEnumParser.parse(errorEnumClass);
-      } catch (CannotParseEnumException e) {
-        throw new RuntimeException(e);
-      }
+      // Get constant information of implementation of ErrorEnumClass
+      Map<ErrorEnumInfo, Map<String, String>> constantInfoMap = extractConstantInfo(errorEnumClass);
 
       // For each HTTP status code, a description is created and stored.
       Set<ErrorEnumInfo> constantInfoKeySet = constantInfoMap.keySet();
@@ -63,5 +56,28 @@ public class SimpErrorResponseDescBuilder implements ErrorResponseDescriptionBui
       }
     }
     return descriptionMap;
+  }
+
+  /**
+   * Extract constant information from ErrorEnum (that the developer created)
+   * @param errorEnumClass Error Enum
+   * @return result
+   */
+  private Map<ErrorEnumInfo, Map<String, String>> extractConstantInfo(Class errorEnumClass) {
+    // check that the developer implements error enum class properly
+    try {
+      errorEnumParser.supports(errorEnumClass);
+    } catch (CannotParseEnumException e) {
+      throw new RuntimeException(e);
+    }
+
+    // extract enum constants and fields value by getter
+    Map<ErrorEnumInfo, Map<String, String>> constantInfoMap = null;
+    try {
+      constantInfoMap = errorEnumParser.parse(errorEnumClass);
+    } catch (CannotParseEnumException e) {
+      throw new RuntimeException(e);
+    }
+    return constantInfoMap;
   }
 }
