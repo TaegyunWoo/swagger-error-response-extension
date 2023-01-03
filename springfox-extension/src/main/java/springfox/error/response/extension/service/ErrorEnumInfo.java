@@ -15,11 +15,13 @@ public interface ErrorEnumInfo {
 
   /**
    * just common getter
+   * @return value of code field
    */
   HttpStatus getCode();
 
   /**
    * just common getter
+   * @return value of description field
    */
   String getDescription();
 }

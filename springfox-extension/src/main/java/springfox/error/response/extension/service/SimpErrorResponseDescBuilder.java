@@ -27,7 +27,7 @@ public class SimpErrorResponseDescBuilder implements ErrorResponseDescriptionBui
   /**
    * Build description that will be included in the 'Swagger Response'
    * @param errorResponseAnno Annotation Class that has error data
-   * @return Map Object that has descriptions per each Http Status Code (< HTTP_Status_Code, Description >)
+   * @return Map Object that has descriptions per each Http Status Code (HTTP_Status_Code, Description)
    */
   @Override
   public Map<String, String> buildDescription(ErrorResponse errorResponseAnno) {
