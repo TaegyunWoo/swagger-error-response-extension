@@ -21,6 +21,7 @@ public class SimpErrorEnumParser implements ErrorEnumParser {
    * that has error information.
    * @param enumClass enum class to parse
    * @return parsing result
+   * @throws CannotParseEnumException unable to parse
    */
   @Override
   public Map<ErrorEnumInfo, Map<String, String>> parse(Class enumClass) throws CannotParseEnumException {
