@@ -53,7 +53,7 @@ public class SimpErrorEnumParser implements ErrorEnumParser {
    * @throws CannotParseEnumException unable to parse
    */
   @Override
-  public boolean supports(Class enumClass) throws CannotParseEnumException {
+  public boolean supports(Class<? extends ErrorEnumInfo> enumClass) throws CannotParseEnumException {
     // Check that it is an Enum class
     if ( !enumClass.isEnum() )
       throw new CannotParseEnumException("ErrorCode enum class is not 'enum class'.");

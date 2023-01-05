@@ -25,5 +25,5 @@ public interface ErrorEnumParser {
    * @return true: can parse
    * @throws CannotParseEnumException if enum class is unable to be parsed
    */
-  boolean supports(Class enumClass) throws CannotParseEnumException;
+  boolean supports(Class<? extends ErrorEnumInfo> enumClass) throws CannotParseEnumException;
 }
