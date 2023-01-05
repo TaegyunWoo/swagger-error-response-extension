@@ -9,7 +9,7 @@
 
 | Demo Project                                                                                                                                                                                                                                                                   | English README.md |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| [![TaegyunWoo/swagger-error-response-extension-demo - GitHub](https://github-readme-stats.vercel.app/api/pin/?username=TaegyunWoo&repo=swagger-error-response-extension-demo&theme=vision-friendly-dark)](https://github.com/TaegyunWoo/swagger-error-response-extension-demo) | none              |
+| [![TaegyunWoo/swagger-error-response-extension-demo - GitHub](https://github-readme-stats-sepia-three.vercel.app/api/pin/?username=TaegyunWoo&repo=swagger-error-response-extension-demo&theme=vision-friendly-dark)](https://github.com/TaegyunWoo/swagger-error-response-extension-demo) | none              |
 
 <br/>
 
