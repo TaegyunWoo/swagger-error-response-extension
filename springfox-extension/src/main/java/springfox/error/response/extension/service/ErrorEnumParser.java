@@ -17,7 +17,7 @@ public interface ErrorEnumParser {
    * @param enumClass enum class you want to parse
    * @return parsed result
    */
-  Map<ErrorEnumInfo, Map<String, String>> parse(Class enumClass) throws CannotParseEnumException;
+  Map<ErrorEnumInfo, Map<String, String>> parse(Class<? extends ErrorEnumInfo> enumClass) throws CannotParseEnumException;
 
   /**
    * check if it is an enum class that can be parsed
