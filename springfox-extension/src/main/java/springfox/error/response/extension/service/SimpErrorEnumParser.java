@@ -24,7 +24,7 @@ public class SimpErrorEnumParser implements ErrorEnumParser {
    * @throws CannotParseEnumException unable to parse
    */
   @Override
-  public Map<ErrorEnumInfo, Map<String, String>> parse(Class enumClass) throws CannotParseEnumException {
+  public Map<ErrorEnumInfo, Map<String, String>> parse(Class<? extends ErrorEnumInfo> enumClass) throws CannotParseEnumException {
     Map<ErrorEnumInfo, Map<String, String>> constantInfoMap = new HashMap<>();
     Object[] enumConstants = enumClass.getEnumConstants();
 
