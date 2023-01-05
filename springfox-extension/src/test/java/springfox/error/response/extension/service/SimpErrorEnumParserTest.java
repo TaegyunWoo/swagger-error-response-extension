@@ -121,7 +121,7 @@ class SimpErrorEnumParserTest {
   @DisplayName("supports enum without description field")
   void supportsNoDescriptionField() {
     //GIVEN
-    Class noDescriptionFieldClass = ChangedCodeFieldNameErrorEnum.class;
+    Class noDescriptionFieldClass = ChangedDescriptionFieldNameErrorEnum.class;
 
     //WHEN
     //simpErrorEnumParser.supports(noDescriptionFieldClass);
