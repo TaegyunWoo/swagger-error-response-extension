@@ -13,6 +13,29 @@
 
 <br/>
 
+## Core Directories
+
+```text
+.
+├── README.md
+├── doc                                                 : Library Documents
+├── jitpack.yml                                         : Jitpack Deployment Setting Properties
+└── springfox-extension                                 : Module for springfox
+    ├── build.gradle
+    └── src
+        ├── main
+            ├── java/springfox/error/response/extension
+                ├── annotation                          : all annotations
+                ├── configuration                       : spring bean configuration
+                ├── exception                           : all exceptions
+                └── service                             : core logics
+                    └── accessor                        : springfox accessor
+            └── resources
+        └── test                                        : test codes
+```
+
+<br/>
+
 ## Index
 - [Swagger Error Response Extension 가 무엇인가요?](#swagger-error-response-extension-가-무엇인가요)
 - [왜 필요한가요?](#왜-필요한가요)
