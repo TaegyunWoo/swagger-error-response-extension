@@ -52,7 +52,7 @@ Swagger Error Response Extension 은 개발자가 직접 정의한 오류코드 
 
 아래 그림처럼요!
 
-![error-example.jpg](./doc/img/error-example.jpg)
+![error-example.jpg](./img/error-example.jpg)
 
 Spring 진영에서 Swagger를 사용하기 위해 사용하는 `SpringFox`나 `SpringDoc` 라이브러리 위에서 동작합니다.
 
