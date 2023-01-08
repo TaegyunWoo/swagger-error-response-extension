@@ -237,7 +237,7 @@ public class Controller {
 
 이제 아래와 같은 결과를 확인할 수 있습니다.
 
-![error-example.jpg](./doc/img/error-example.jpg)
+![error-example.jpg](./img/error-example.jpg)
 
 <br/>
 
