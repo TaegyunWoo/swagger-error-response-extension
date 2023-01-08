@@ -272,7 +272,7 @@ public class CustomErrorResponseDescBuilder implements ErrorResponseDescriptionB
 
 라이브러리의 `springfox.error.response.extension.service.SimpErrorResponseDescBuilder` 대신 위 component 가 bean으로 등록되고 동작하게 됩니다.
 
-동작원리에 대한 자세한 내용은 [SimpErrorResponseDescBuilder.java](./springfox-extension/src/main/java/springfox/error/response/extension/service/SimpErrorResponseDescBuilder.java) 를 참고하세요.
+동작원리에 대한 자세한 내용은 [SimpErrorResponseDescBuilder.java](../springfox-extension/src/main/java/springfox/error/response/extension/service/SimpErrorResponseDescBuilder.java) 를 참고하세요.
 
 <br/>
 
