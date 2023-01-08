@@ -7,9 +7,9 @@
 |-----------|------------|-----------|------------|----------|---|
 |2.7.7| ✅  | 3.0.0     | ✅  |✖️|✖️|
 
-| Demo Project                                                                                                                                                                                                                                                                   | Korean README.md                                                                                                 |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| [![TaegyunWoo/swagger-error-response-extension-demo - GitHub](https://github-readme-stats-sepia-three.vercel.app/api/pin/?username=TaegyunWoo&repo=swagger-error-response-extension-demo&theme=vision-friendly-dark)](https://github.com/TaegyunWoo/swagger-error-response-extension-demo) | [Korean README.md](https://github.com/TaegyunWoo/swagger-error-response-extension/tree/master/doc/README-KOR.md) |
+| Demo Project                                                                                                                                                                                                                                                                   | English README.md     |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| [![TaegyunWoo/swagger-error-response-extension-demo - GitHub](https://github-readme-stats-sepia-three.vercel.app/api/pin/?username=TaegyunWoo&repo=swagger-error-response-extension-demo&theme=vision-friendly-dark)](https://github.com/TaegyunWoo/swagger-error-response-extension-demo) | [English README.md](https://github.com/TaegyunWoo/swagger-error-response-extension) |
 
 <br/>
 
@@ -37,63 +37,63 @@
 <br/>
 
 ## Index
-- [What is Swagger Error Response Extension?](#what-is-swagger-error-response-extension)
-- [Why do you need it?](#why-do-you-need-it)
-- [How do I use it? - SpringFox](#how-do-i-use-it---springfox)
-- [Customizing - SpringFox](#customizing---springfox)
-- [How do I use it? - SpringDoc](#how-do-i-use-it---springdoc)
-- [Customizing - SpringDoc](#customizing---springdoc)
-- [Future plans](#future-plans)
+- [Swagger Error Response Extension 가 무엇인가요?](#swagger-error-response-extension-가-무엇인가요)
+- [왜 필요한가요?](#왜-필요한가요)
+- [어떻게 사용하나요? - SpringFox](#어떻게-사용하나요---springfox)
+- [커스터마이징 - SpringFox](#커스터마이징---springfox)
+- [어떻게 사용하나요? - SpringDoc](#어떻게-사용하나요---springdoc)
+- [커스터마이징 - SpringDoc](#커스터마이징---springdoc)
+- [앞으로의 계획](#앞으로의-계획)
 
 <br/>
 
-## What is Swagger Error Response Extension?
-Swagger Error Response Extension is a simple open source library that easily adds error code information defined by the developer to Swagger Response Description.
+## Swagger Error Response Extension 가 무엇인가요?
+Swagger Error Response Extension 은 개발자가 직접 정의한 오류코드 정보를 간편하게 Swagger Response Description 에 추가해주는 간단한 오픈소스 라이브러리입니다.
 
-Like this...
+아래 그림처럼요!
 
 ![error-example.jpg](./doc/img/error-example.jpg)
 
-It operates on the `SpringFox` or `SpringDoc` libraries.
+Spring 진영에서 Swagger를 사용하기 위해 사용하는 `SpringFox`나 `SpringDoc` 라이브러리 위에서 동작합니다.
 
-> Currently, only `SpringFox` is supported.
-
-<br/>
-
-## Why do you need it?
-### First of all, why do developers use their own defined error codes?
-
-There may be various reasons, but the most important reason is to help smooth communication and logic development between Client and Server developers.
-
-Here's a example.
-
-Let's say we're a Server developer trying to create a login API.
-
-And there is a requirement that the user should be notified of both 'when trying to sign in with a non-existent id' and 'when trying to sign in with an incorrect password'.
-
-If so, you should implement the API to respond with a different error code for each failure case.
-
-- `account id does not exist` -> Respond `WRONG_ID` Code
-- `wrong password` -> Respond `WRONG_PW` Code
-
-Create an API as above, and inform the client developer that you have implemented it to respond by defining error codes such as `WRONG_ID` and `WRONG_PW`.
-
-> 'You need to tell your client developers' that's why you need the Swagger Error Response Extension library!  
-We will continue to explain the details.
-
-Then, the client developer can look at each error code and decide which notification to display to the user according to that code.
+> 현재는 `SpringFox` 만 지원하는 중입니다.
 
 <br/>
 
-### Then, how can we inform the client developer of this error code simply and clearly?
-One way is to organize these error codes in an external document and share them among developers.
+## 왜 필요한가요?
+### 먼저 개발자는 왜 직접 정의한 오류코드를 사용할까요?
 
-However, when doing API Documentation through Swagger, wouldn't it be more convenient if these error codes were summarized in the relevant API documentation description?
+다양한 이유가 있겠지만, 가장 중요한 이유는 바로 Client 개발자와 Server 개발자 간의 원활한 소통과 로직 개발을 돕기 위해서 입니다.
+
+예를 들어볼까요?
+
+우리는 로그인 API를 만들려고 하는 Server 개발자라고 해봅시다.
+
+그리고 `존재하지 않는 id로 로그인을 시도한 경우`와 `틀린 비밀번호로 로그인을 시도한 경우` 모두 사용자에게 알려줘야 한다는 요구사항이 있습니다.
+
+그렇다면 각 실패 케이스마다, 다른 오류코드를 갖는 응답을 하도록 API를 구현해야합니다.
+
+- `존재하지 않는 id` -> `WRONG_ID` 코드 응답
+- `틀린 비밀번호` -> `WRONG_PW` 코드 응답
+
+위와 같이 API를 만들어두고, `WRONG_ID`, `WRONG_PW` 라는 오류코드를 정의해서 응답하도록 구현했다고 Client 개발자에게 알려주면 됩니다.
+
+> 'Client 개발자에게 알려줘야한다는 점'이 Swagger Error Response Extension 라이브러리가 필요한 이유입니다!  
+자세한 것은 계속 설명할게요.
+
+그럼 Client 개발자가 각 오류코드를 보고, 그 코드에 맞춰 사용자에게 어떤 알림을 띄울지 결정할 수 있습니다.
 
 <br/>
 
-### Great! Then let's add these error codes directly to Swagger.
-If you use Swagger through `SpringFox`, you can directly add a description of the error code as below.
+### 그럼 어떻게 이 오류코드를 Client 개발자에게 간단명료하게 알려줄 수 있을까요?
+이 오류코드들을 외부 Document에 정리하고 개발자들끼리 공유하는 것도 하나의 방법일 수 있습니다.
+
+하지만 Swagger 를 통해 API Documentation을 하고 있을 때, 관련 API 문서 설명에 이 오류코드들을 정리해둔다면 좀 더 편하지 않을까요?
+
+<br/>
+
+### 좋습니다. 그러면 Swagger 에 이 오류코드들을 직접 추가해봅시다!
+만약 `SpringFox` 를 통해 Swagger를 사용할 때, 직접 오류코드에 대한 설명을 아래와 같이 추가하면 됩니다.
 
 ```java
 @ApiResponses(value = {
@@ -105,28 +105,28 @@ String login(@RequestBody RequestDto requestDto) {
 }
 ```
 
-Adding a direct description like this is also effective.
+이렇게 직접 설명을 추가하는 것도 효과적입니다.
 
-But what if one API has more than 10 error codes, or if the existing error codes are removed?
+하지만 한 API의 오류코드가 10개가 넘어가거나, 기존에 있던 오류코드가 제거된다면 어떨까요?
 
-All you have to do is add or edit the description yourself! But are you confident enough to fix it without making any mistakes?
-
-<br/>
-
-### So the Swagger Error Response Extension was born.
-To improve this inconvenience, Swagger Error Response Extension manages error codes through **Enum**.
-
-If you define the error code and description in the Enum class and import them in the controller, **related information is automatically added to the description of the Swagger Response API**.
-
-Also, **points that manage error codes can be gathered into one enum class**. In other words, you can control the description of the error code by managing only the enum class.
-
-Finally, since the error code is managed as an enum class, **you can use the enum class in actual logic, and you can bring it to Swagger as it is and use it**. 
+직접 일일이 설명을 추가하거나 수정하면 됩니다! 하지만 어떤 실수도 없이 수정할 자신이 있나요?
 
 <br/>
 
-## How do I use it? - SpringFox
+### 그래서 Swagger Error Response Extension 가 탄생했습니다.
+이런 불편함을 개선하기 위해, Swagger Error Response Extension은 **Enum을 통해 오류코드를 관리**합니다.
+
+Enum 클래스에 오류코드와 설명을 정의해두고 그것을 컨트롤러에서 import 하면, **관련 정보들이 자동으로 Swagger Response API의 description에 추가**됩니다.
+
+또한 **오류 코드를 관리하는 point를 enum 클래스 한 곳**으로 모을 수 있습니다. 즉, enum 클래스만 관리해도 오류코드에 대한 설명를 제어할 수 있습니다.
+
+마지막으로 오류 코드를 enum 클래스로 관리하므로, **실제 로직에서 enum 클래스를 사용할 수 있으며, 이것을 그대로 Swagger 까지 가져와 사용**할 수 있습니다. 
+
+<br/>
+
+## 어떻게 사용하나요? - SpringFox
 ### Gradle Dependencies
-First, add dependencies to `build.gradle`.
+먼저 `build.gradle`에 의존성을 추가합니다.
 
 ```groovy
 repositories {
@@ -143,7 +143,7 @@ dependencies {
 <br/>
 
 ### Swagger Configuration
-Proceed with the basic configuration to use SpringFox.
+SpringFox를 사용하기 위한 기본 설정을 진행합니다.
 
 ```java
 @Configuration
@@ -166,9 +166,9 @@ public class SwaggerConfig {
 <br/>
 
 ### Error Enum
-Now let's use the Swagger Error Response Extension in earnest.
+이제 본격적으로 Swagger Error Response Extension 를 사용해봅시다.
 
-Define an Enum class to contain error code information.
+먼저 오류코드 정보를 담을 Enum 클래스를 정의합니다.
 
 ```java
 import org.springframework.http.HttpStatus;
@@ -198,21 +198,21 @@ public enum LoginErrorCode implements ErrorEnumInfo {
 }
 ```
 
-1. Enum to contain error information must implement `springfox.error.response.extension.service.ErrorEnumInfo` interface.
-2. You need to declare 2 fields. **(Note that the field names must be the same!)**
-    - `private HttpStatus code`
-    - `private String description`
-3. Declare a constructor with `code` and `description` parameters.
-4. Override the getter method of each field.
-5. Declare enum constants, and properly contain error information in each field.
-    - enum constant -> error code
-    - `code` Field -> HttpStatus Code
-    - `description` Field -> description of error code
+- 에러 정보가 담길 Enum 은 무조건 `springfox.error.response.extension.service.ErrorEnumInfo` 인터페이스를 implements 해야합니다.
+- 2개의 Field를 선언해야 합니다. **(Field 이름이 동일해야 하는 것에 주의하세요!)**
+  - `private HttpStatus code`
+  - `private String description`
+- `code`, `description` 파라미터를 갖는 생성자를 선언합니다.
+- 각 Field의 getter 메서드를 override 합니다.
+- enum 상수를 선언하고, 각 Field에 오류정보를 적절히 담습니다.
+  - enum constant -> error code
+  - `code` Field -> HttpStatus Code
+  - `description` Field -> description of error code
 
 <br/>
 
 ### Controller
-Just apply the enum defined above to the controller (Swagger API).
+위에서 정의한 enum을 컨트롤러(Swagger API)에 적용하면 됩니다.
 
 ```java
 @RequestMapping("/login")
@@ -233,16 +233,16 @@ public class Controller {
 }
 ```
 
-All settings are done!
+모든 설정이 끝났습니다!
 
-Now you can see the result like below.
+이제 아래와 같은 결과를 확인할 수 있습니다.
 
 ![error-example.jpg](./doc/img/error-example.jpg)
 
 <br/>
 
-## Customizing - SpringFox
-If you want to configure the swagger response description in a different format, you can implement the `ErrorResponseDescriptionBuilder` interface.
+## 커스터마이징 - SpringFox
+만약 다른 형태로 swagger response description을 구성하고 싶다면, `ErrorResponseDescriptionBuilder` 인터페이스를 구현하면 됩니다.
 
 ```java
 import org.springframework.context.annotation.Primary;
@@ -270,24 +270,24 @@ public class CustomErrorResponseDescBuilder implements ErrorResponseDescriptionB
 }
 ```
 
-Instead of the library's `springfox.error.response.extension.service.SimpErrorResponseDescBuilder`, the above component is registered as a bean and operates.
+라이브러리의 `springfox.error.response.extension.service.SimpErrorResponseDescBuilder` 대신 위 component 가 bean으로 등록되고 동작하게 됩니다.
 
-For details on the operation principle, refer to [SimpErrorResponseDescBuilder.java](./springfox-extension/src/main/java/springfox/error/response/extension/service/SimpErrorResponseDescBuilder.java).
-
-<br/>
-
-## How do I use it? - SpringDoc
-> A Module supporting SpringDoc will be updated.
+동작원리에 대한 자세한 내용은 [SimpErrorResponseDescBuilder.java](./springfox-extension/src/main/java/springfox/error/response/extension/service/SimpErrorResponseDescBuilder.java) 를 참고하세요.
 
 <br/>
 
-## Customizing - SpringDoc
-> A Module supporting SpringDoc will be updated.
+## 어떻게 사용하나요? - SpringDoc
+> 추가 예정입니다.
 
 <br/>
 
-## Future plans
-- Currently works only with SpringFox. We plan to update to support SpringDoc as well. 
+## 커스터마이징 - SpringDoc
+> 추가 예정입니다.
+
+<br/>
+
+## 앞으로의 계획
+- 현재 SpringFox 한정으로 동작합니다. SpringDoc까지 지원하도록 업데이트할 예정입니다. 
 
 <br/>
 
